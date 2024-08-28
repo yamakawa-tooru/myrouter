@@ -1,4 +1,4 @@
-package router
+package myrouter
 
 import (
 	"net/http"

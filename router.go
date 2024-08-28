@@ -1,4 +1,4 @@
-package router
+package myrouter
 
 import (
 	"net/http"
@@ -88,7 +88,7 @@ func (r *Router) Search(method, endpoint string) http.Handler {
 }
 
 func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
-	handler := r.Search(req.Method, req.URL.PATH)
+	handler := r.Search(req.Method, req.URL.Path)
 	if handler != nil {
 		handler.ServeHTTP(w, req)
 		return
